@@ -105,6 +105,7 @@
                     <a href="/About/" class="nav-link text-white font-medium text-sm tracking-wide text-gold">About</a>
                     <a href="/Sermons/" class="nav-link text-white font-medium text-sm tracking-wide">Sermons</a>
                     <a href="/Ministries/" class="nav-link text-white font-medium text-sm tracking-wide">Ministries</a>
+                    <a href="/Gallery/" class="nav-link text-white font-medium text-sm tracking-wide">Gallery</a>
                     <a href="/Contact/" class="nav-link text-white font-medium text-sm tracking-wide">Contact</a>
                     <a href="/Contact/" class="bg-gold px-6 py-2.5 rounded-full text-royal-blue font-semibold text-sm hover:bg-gold-light transition-all">Join Us</a>
                 </div>
@@ -121,6 +122,7 @@
                 <a href="/About/" class="block px-3 py-3 text-gold font-medium bg-royal-blue-light rounded-lg">About</a>
                 <a href="/Sermons/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Sermons</a>
                 <a href="/Ministries/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Ministries</a>
+                <a href="/Gallery/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Gallery</a>
                 <a href="/Contact/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Contact</a>
             </div>
         </div>
@@ -311,6 +313,7 @@
                         <li><a href="/About/" class="text-gray-300 hover:text-gold transition-colors text-sm">About Us</a></li>
                         <li><a href="/Sermons/" class="text-gray-300 hover:text-gold transition-colors text-sm">Sermons</a></li>
                         <li><a href="/Ministries/" class="text-gray-300 hover:text-gold transition-colors text-sm">Ministries</a></li>
+                        <li><a href="/Gallery/" class="text-gray-300 hover:text-gold transition-colors text-sm">Gallery</a></li>
                         <li><a href="/Contact/" class="text-gray-300 hover:text-gold transition-colors text-sm">Contact</a></li>
                     </ul>
                 </div>
@@ -350,7 +353,8 @@
             
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm text-center md:text-left">
-                    © 2026 AIC Zion – Zambezi. All rights reserved.
+                    © <span id="footer-year"></span> AIC Zion – Zambezi. All rights reserved.
+                    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
                 </p>
                 <p class="text-gray-500 text-xs mt-2 md:mt-0">
                     African Inland Church | Kiambu County, Kenya
