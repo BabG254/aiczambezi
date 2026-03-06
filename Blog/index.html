@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the latest devotionals, testimonies, and faith reflections from AIC Zion - Zambezi Church in Kiambu County, Kenya.">
+    <title>Blog | AIC Zion – Zambezi</title>
+    <link rel="icon" type="image/png" href="/Images/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-blue': '#0B3C5D',
+                        'royal-blue-light': '#1a5276',
+                        'gold': '#D4AF37',
+                        'gold-light': '#F4D03F',
+                        'light-gray': '#F5F7FA',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .blog-card { transition: all 0.4s ease; }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(11, 60, 93, 0.15); }
+        .blog-card:hover .blog-img { transform: scale(1.05); }
+        .blog-img { transition: transform 0.5s ease; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0B3C5D; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        .category-btn.active { background-color: #0B3C5D; color: white; border-color: #0B3C5D; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-royal-blue/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/Home/" class="flex items-center space-x-3">
+                    <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-16 w-auto">
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-5">
+                    <a href="/Home/" class="nav-link text-white font-medium text-sm tracking-wide">Home</a>
+                    <a href="/About/" class="nav-link text-white font-medium text-sm tracking-wide">About</a>
+                    <a href="/Sermons/" class="nav-link text-white font-medium text-sm tracking-wide">Sermons</a>
+                    <a href="/Ministries/" class="nav-link text-white font-medium text-sm tracking-wide">Ministries</a>
+                    <a href="/Gallery/" class="nav-link text-white font-medium text-sm tracking-wide">Gallery</a>
+                    <a href="/Blog/" class="nav-link text-gold font-medium text-sm tracking-wide">Blog</a>
+                    <a href="/Contact/" class="nav-link text-white font-medium text-sm tracking-wide">Contact</a>
+                    <a href="/Giving/" class="border border-gold text-gold px-4 py-2 rounded-full text-sm font-semibold hover:bg-gold hover:text-royal-blue transition-all">Give</a>
+                    <a href="/Contact/" class="bg-gold px-6 py-2.5 rounded-full text-royal-blue font-semibold text-sm hover:bg-gold-light transition-all">Join Us</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden hidden bg-royal-blue absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="/Home/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Home</a>
+                <a href="/About/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">About</a>
+                <a href="/Sermons/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Sermons</a>
+                <a href="/Ministries/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Ministries</a>
+                <a href="/Gallery/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Gallery</a>
+                <a href="/Blog/" class="block px-3 py-3 text-gold font-medium bg-royal-blue-light rounded-lg">Blog</a>
+                <a href="/Contact/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Contact</a>
+                <a href="/Giving/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Give</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="http://static.photos/nature/1200x630/14" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-royal-blue/90 to-royal-blue"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Faith &amp; Reflection</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6">Our Blog</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto">Devotionals, testimonies, and faith reflections to encourage and inspire your walk with God.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-8 reveal">Featured Article</p>
+            <div class="reveal bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+                <div class="grid lg:grid-cols-2">
+                    <div class="relative overflow-hidden aspect-video lg:aspect-auto min-h-72">
+                        <img src="http://static.photos/nature/800x600/1" alt="Featured Article" class="w-full h-full object-cover blog-img">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-gold text-royal-blue px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Devotional</span>
+                        </div>
+                    </div>
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4 text-sm text-gray-400">
+                            <i data-lucide="calendar" class="w-4 h-4"></i>
+                            <span>March 2, 2026</span>
+                            <span>•</span>
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span>5 min read</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-royal-blue mb-4 leading-tight">
+                            Walking in Faith: When God's Plan Doesn't Look Like Yours
+                        </h2>
+                        <p class="text-gray-500 leading-relaxed mb-6">
+                            There are moments in every believer's journey where we look at our circumstances and wonder if God has forgotten us. In this devotional, we explore the story of Joseph and how trusting God's process leads to His perfect promise...
+                        </p>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-royal-blue rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-royal-blue text-sm">Pastor John Maina</p>
+                                <p class="text-gray-400 text-xs">Senior Pastor</p>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-gold font-semibold hover:text-royal-blue transition-colors">
+                            Read Full Article <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="py-8 bg-light-gray border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button class="category-btn active px-5 py-2 rounded-full text-sm font-semibold bg-royal-blue text-white border border-royal-blue transition-all">All</button>
+                <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 hover:bg-royal-blue hover:text-white border border-gray-200 transition-all">Devotionals</button>
+                <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 hover:bg-royal-blue hover:text-white border border-gray-200 transition-all">Testimonies</button>
+                <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 hover:bg-royal-blue hover:text-white border border-gray-200 transition-all">Bible Study</button>
+                <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 hover:bg-royal-blue hover:text-white border border-gray-200 transition-all">Youth</button>
+                <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 hover:bg-royal-blue hover:text-white border border-gray-200 transition-all">Family</button>
+                <button class="category-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-gray-600 hover:bg-royal-blue hover:text-white border border-gray-200 transition-all">Prayer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16 lg:py-24 bg-light-gray">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Post 1 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 reveal">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="http://static.photos/nature/600x400/2" alt="God of Second Chances" class="w-full h-full object-cover blog-img">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-royal-blue text-white px-3 py-1 rounded-full text-xs font-semibold">Testimony</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <i data-lucide="calendar" class="w-3 h-3"></i> February 23, 2026
+                            <span>•</span>
+                            <i data-lucide="clock" class="w-3 h-3"></i> 4 min read
+                        </div>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-3 leading-tight">God of Second Chances: My Story of Redemption</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">A personal testimony of how the grace of God turned a broken life into a living testimony of His faithfulness...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
+                                    <i data-lucide="user" class="w-4 h-4 text-royal-blue"></i>
+                                </div>
+                                <span class="text-xs text-gray-500">Sister Mary Wangari</span>
+                            </div>
+                            <a href="#" class="text-gold font-semibold text-sm hover:text-royal-blue transition-colors flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 reveal">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="http://static.photos/nature/600x400/5" alt="The Beatitudes" class="w-full h-full object-cover blog-img">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-gold text-royal-blue px-3 py-1 rounded-full text-xs font-semibold">Bible Study</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <i data-lucide="calendar" class="w-3 h-3"></i> February 15, 2026
+                            <span>•</span>
+                            <i data-lucide="clock" class="w-3 h-3"></i> 7 min read
+                        </div>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-3 leading-tight">Understanding the Beatitudes: A Modern Application</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Jesus's Sermon on the Mount speaks as powerfully today as it did two thousand years ago. A deep dive into Matthew 5:1-12...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
+                                    <i data-lucide="user" class="w-4 h-4 text-royal-blue"></i>
+                                </div>
+                                <span class="text-xs text-gray-500">Deacon Peter Kamau</span>
+                            </div>
+                            <a href="#" class="text-gold font-semibold text-sm hover:text-royal-blue transition-colors flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 reveal">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="http://static.photos/people/600x400/100" alt="Youth and Peer Pressure" class="w-full h-full object-cover blog-img">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-royal-blue text-white px-3 py-1 rounded-full text-xs font-semibold">Youth</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <i data-lucide="calendar" class="w-3 h-3"></i> February 8, 2026
+                            <span>•</span>
+                            <i data-lucide="clock" class="w-3 h-3"></i> 3 min read
+                        </div>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-3 leading-tight">5 Practical Tips for Young Christians Navigating Peer Pressure</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Faith in your teenage and early adult years is one of the most important investments you can make. Here's how to stand firm...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
+                                    <i data-lucide="user" class="w-4 h-4 text-royal-blue"></i>
+                                </div>
+                                <span class="text-xs text-gray-500">Youth Leader James</span>
+                            </div>
+                            <a href="#" class="text-gold font-semibold text-sm hover:text-royal-blue transition-colors flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 reveal">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="http://static.photos/nature/600x400/8" alt="Corporate Prayer" class="w-full h-full object-cover blog-img">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-gold text-royal-blue px-3 py-1 rounded-full text-xs font-semibold">Prayer</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <i data-lucide="calendar" class="w-3 h-3"></i> January 30, 2026
+                            <span>•</span>
+                            <i data-lucide="clock" class="w-3 h-3"></i> 6 min read
+                        </div>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-3 leading-tight">The Power of Corporate Prayer: Why We Pray Together</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Scripture tells us that where two or three gather in His name, He is there. Corporate prayer is one of the most powerful weapons in the Kingdom...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
+                                    <i data-lucide="user" class="w-4 h-4 text-royal-blue"></i>
+                                </div>
+                                <span class="text-xs text-gray-500">Pastor John Maina</span>
+                            </div>
+                            <a href="#" class="text-gold font-semibold text-sm hover:text-royal-blue transition-colors flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 reveal">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="http://static.photos/people/600x400/200" alt="Christ-Centred Home" class="w-full h-full object-cover blog-img">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-royal-blue text-white px-3 py-1 rounded-full text-xs font-semibold">Family</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <i data-lucide="calendar" class="w-3 h-3"></i> January 19, 2026
+                            <span>•</span>
+                            <i data-lucide="clock" class="w-3 h-3"></i> 5 min read
+                        </div>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-3 leading-tight">Building a Christ-Centred Home: Foundations for Every Family</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">The family is God's first institution. In a world full of distractions, how do we keep Jesus at the centre of our homes?</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
+                                    <i data-lucide="user" class="w-4 h-4 text-royal-blue"></i>
+                                </div>
+                                <span class="text-xs text-gray-500">Elder Samuel Njoroge</span>
+                            </div>
+                            <a href="#" class="text-gold font-semibold text-sm hover:text-royal-blue transition-colors flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 reveal">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="http://static.photos/nature/600x400/11" alt="Renewing Your Mind" class="w-full h-full object-cover blog-img">
+                        <div class="absolute top-3 left-3">
+                            <span class="bg-gold text-royal-blue px-3 py-1 rounded-full text-xs font-semibold">Devotional</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <i data-lucide="calendar" class="w-3 h-3"></i> January 12, 2026
+                            <span>•</span>
+                            <i data-lucide="clock" class="w-3 h-3"></i> 4 min read
+                        </div>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-3 leading-tight">Renewing Your Mind: A 7-Day Devotional for a Fresh Start</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Romans 12:2 calls us to be transformed by the renewing of our minds. This devotional series will guide you step by step...</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
+                                    <i data-lucide="user" class="w-4 h-4 text-royal-blue"></i>
+                                </div>
+                                <span class="text-xs text-gray-500">Sister Grace Muthoni</span>
+                            </div>
+                            <a href="#" class="text-gold font-semibold text-sm hover:text-royal-blue transition-colors flex items-center gap-1">Read <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-12 reveal">
+                <button class="bg-royal-blue text-white px-10 py-4 rounded-full font-semibold hover:bg-royal-blue-light transition-all shadow-lg">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-20 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="w-96 h-96 bg-gold rounded-full absolute -top-20 -right-20"></div>
+            <div class="w-64 h-64 bg-gold rounded-full absolute bottom-10 left-10"></div>
+        </div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <i data-lucide="mail" class="w-12 h-12 text-gold mx-auto mb-5"></i>
+            <h2 class="text-4xl font-playfair font-bold text-white mb-4">Stay Inspired</h2>
+            <p class="text-gray-300 text-lg mb-8">Subscribe to receive new devotionals, testimonies, and church updates straight to your inbox.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="return false;">
+                <input type="email" placeholder="Enter your email address" class="flex-1 px-5 py-3 rounded-full text-gray-800 outline-none text-sm font-medium focus:ring-2 focus:ring-gold">
+                <button type="submit" class="bg-gold text-royal-blue px-7 py-3 rounded-full font-bold text-sm hover:bg-gold-light transition-all whitespace-nowrap">Subscribe</button>
+            </form>
+            <p class="text-gray-500 text-xs mt-4">No spam, just faith. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Want to Contribute -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl font-playfair font-bold text-royal-blue mb-4">Want to Share Your Story?</h2>
+            <p class="text-gray-500 text-lg mb-8">Have a testimony, devotional, or article to contribute? We'd love to hear and share your story with the church family.</p>
+            <a href="/Contact/" class="inline-flex items-center gap-2 bg-gold text-royal-blue px-8 py-4 rounded-full font-bold hover:bg-gold-light transition-all shadow-lg">
+                <i data-lucide="send" class="w-5 h-5"></i> Submit Your Story
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-royal-blue text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-14 w-auto">
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        A Christ-centered church committed to spreading the love of God and building strong families in Kiambu County, Kenya.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/Home/" class="text-gray-300 hover:text-gold transition-colors text-sm">Home</a></li>
+                        <li><a href="/About/" class="text-gray-300 hover:text-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="/Sermons/" class="text-gray-300 hover:text-gold transition-colors text-sm">Sermons</a></li>
+                        <li><a href="/Ministries/" class="text-gray-300 hover:text-gold transition-colors text-sm">Ministries</a></li>
+                        <li><a href="/Gallery/" class="text-gray-300 hover:text-gold transition-colors text-sm">Gallery</a></li>
+                        <li><a href="/Blog/" class="text-gold font-semibold transition-colors text-sm">Blog</a></li>
+                        <li><a href="/Giving/" class="text-gray-300 hover:text-gold transition-colors text-sm">Give</a></li>
+                        <li><a href="/Contact/" class="text-gray-300 hover:text-gold transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Service Times</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between text-gray-300">
+                            <span>Sunday Worship</span>
+                            <span class="text-gold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Midweek Fellowship</span>
+                            <span class="text-gold">Wed 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Youth Fellowship</span>
+                            <span class="text-gold">Sat 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">Zambezi, Kiambu County<br>Near Limuru, Kenya</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">+254 712 345 678</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">info@aiczionzambezi.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    © <span id="footer-year"></span> AIC Zion – Zambezi. All rights reserved.
+                    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+                </p>
+                <p class="text-gray-500 text-xs mt-2 md:mt-0">African Inland Church | Kiambu County, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // Category filter buttons
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active', 'bg-royal-blue', 'text-white', 'border-royal-blue'));
+                this.classList.add('active', 'bg-royal-blue', 'text-white');
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

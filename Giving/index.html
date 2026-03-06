@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support AIC Zion - Zambezi through your generous giving. Your donations fund ministry, outreach, and community impact in Kiambu County, Kenya.">
+    <title>Give | AIC Zion – Zambezi</title>
+    <link rel="icon" type="image/png" href="/Images/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-blue': '#0B3C5D',
+                        'royal-blue-light': '#1a5276',
+                        'gold': '#D4AF37',
+                        'gold-light': '#F4D03F',
+                        'light-gray': '#F5F7FA',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: #D4AF37; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .giving-card { transition: all 0.4s ease; }
+        .giving-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(11, 60, 93, 0.15); }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0B3C5D; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-royal-blue/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/Home/" class="flex items-center space-x-3">
+                    <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-16 w-auto">
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-5">
+                    <a href="/Home/" class="nav-link text-white font-medium text-sm tracking-wide">Home</a>
+                    <a href="/About/" class="nav-link text-white font-medium text-sm tracking-wide">About</a>
+                    <a href="/Sermons/" class="nav-link text-white font-medium text-sm tracking-wide">Sermons</a>
+                    <a href="/Ministries/" class="nav-link text-white font-medium text-sm tracking-wide">Ministries</a>
+                    <a href="/Gallery/" class="nav-link text-white font-medium text-sm tracking-wide">Gallery</a>
+                    <a href="/Blog/" class="nav-link text-white font-medium text-sm tracking-wide">Blog</a>
+                    <a href="/Contact/" class="nav-link text-white font-medium text-sm tracking-wide">Contact</a>
+                    <a href="/Giving/" class="nav-link text-gold font-semibold text-sm tracking-wide">Give</a>
+                    <a href="/Contact/" class="bg-gold px-6 py-2.5 rounded-full text-royal-blue font-semibold text-sm hover:bg-gold-light transition-all">Join Us</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden hidden bg-royal-blue absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="/Home/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Home</a>
+                <a href="/About/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">About</a>
+                <a href="/Sermons/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Sermons</a>
+                <a href="/Ministries/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Ministries</a>
+                <a href="/Gallery/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Gallery</a>
+                <a href="/Blog/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Blog</a>
+                <a href="/Contact/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Contact</a>
+                <a href="/Giving/" class="block px-3 py-3 text-gold font-medium bg-royal-blue-light rounded-lg">Give</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="http://static.photos/nature/1200x630/22" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-royal-blue/90 to-royal-blue"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Partner With Us</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6">Give & Support</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto">Your generosity fuels the mission of God's Kingdom and transforms lives in our community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripture Banner -->
+    <section class="bg-gold py-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-royal-blue text-lg sm:text-xl font-playfair font-semibold leading-relaxed italic">
+                "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+            </p>
+            <p class="text-royal-blue/70 font-semibold mt-3 tracking-wide text-sm">— 2 Corinthians 9:7 (NIV)</p>
+        </div>
+    </section>
+
+    <!-- Why Give -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Kingdom Investment</p>
+                    <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue mb-6">Why We Give</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-5">
+                        At AIC Zion – Zambezi, giving is an act of worship and faith. When you give, you are not merely supporting a church — you are investing in lives being transformed by the Gospel.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-5">
+                        Your contributions enable us to run vibrant ministries, reach the unreached, serve the vulnerable, and equip the next generation with sound biblical teaching.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Every shilling given in faith, no matter the amount, goes further than you can imagine when God multiplies it for His glory.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6 reveal">
+                    <div class="bg-light-gray rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 bg-royal-blue rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="book-open" class="w-7 h-7 text-gold"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">Biblical Teaching</h3>
+                        <p class="text-gray-500 text-sm">Funding sermons, bible studies &amp; discipleship materials</p>
+                    </div>
+                    <div class="bg-light-gray rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 bg-royal-blue rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="heart-handshake" class="w-7 h-7 text-gold"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">Community Outreach</h3>
+                        <p class="text-gray-500 text-sm">Feeding programs, home visits &amp; community support</p>
+                    </div>
+                    <div class="bg-light-gray rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 bg-royal-blue rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="users" class="w-7 h-7 text-gold"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">Youth Ministry</h3>
+                        <p class="text-gray-500 text-sm">Empowering the next generation through programs &amp; events</p>
+                    </div>
+                    <div class="bg-light-gray rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 bg-royal-blue rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="building-2" class="w-7 h-7 text-gold"></i>
+                        </div>
+                        <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">Facilities</h3>
+                        <p class="text-gray-500 text-sm">Maintaining our church building &amp; expanding capacity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ways to Give -->
+    <section class="py-20 lg:py-28 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">How to Contribute</p>
+                <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue mb-4">Ways to Give</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Choose the giving method that works best for you. All contributions are received with gratitude and prayer.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- M-Pesa -->
+                <div class="giving-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 reveal">
+                    <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue mb-3">M-Pesa</h3>
+                    <p class="text-gray-500 mb-6">The quickest way to give using your phone — available 24/7 across Kenya.</p>
+                    <div class="bg-green-50 rounded-xl p-5 space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500 font-medium">Paybill Number</span>
+                            <span class="font-bold text-royal-blue text-base">400200</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500 font-medium">Account Name</span>
+                            <span class="font-bold text-royal-blue text-base">AIC Zion</span>
+                        </div>
+                    </div>
+                    <ol class="mt-5 space-y-2 text-sm text-gray-500">
+                        <li class="flex gap-2"><span class="text-gold font-bold">1.</span> Go to M-Pesa → Lipa na M-Pesa</li>
+                        <li class="flex gap-2"><span class="text-gold font-bold">2.</span> Select Pay Bill</li>
+                        <li class="flex gap-2"><span class="text-gold font-bold">3.</span> Enter Business No: <strong>400200</strong></li>
+                        <li class="flex gap-2"><span class="text-gold font-bold">4.</span> Account: <strong>AIC Zion</strong></li>
+                        <li class="flex gap-2"><span class="text-gold font-bold">5.</span> Enter amount &amp; your M-Pesa PIN</li>
+                    </ol>
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="giving-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 reveal">
+                    <div class="w-16 h-16 bg-royal-blue rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="landmark" class="w-8 h-8 text-gold"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue mb-3">Bank Transfer</h3>
+                    <p class="text-gray-500 mb-6">For larger gifts or regular standing orders, a bank transfer is reliable and secure.</p>
+                    <div class="bg-blue-50 rounded-xl p-5 space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500 font-medium">Bank</span>
+                            <span class="font-bold text-royal-blue">Equity Bank</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500 font-medium">Account Name</span>
+                            <span class="font-bold text-royal-blue">AIC Zion Zambezi</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500 font-medium">Account No.</span>
+                            <span class="font-bold text-royal-blue">0123456789</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500 font-medium">Branch</span>
+                            <span class="font-bold text-royal-blue">Limuru</span>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-400">Please email <span class="text-royal-blue font-semibold">info@aiczionzambezi.org</span> after transfer for confirmation.</p>
+                </div>
+
+                <!-- In-Person -->
+                <div class="giving-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 reveal">
+                    <div class="w-16 h-16 bg-gold rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="church" class="w-8 h-8 text-royal-blue"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue mb-3">In-Person</h3>
+                    <p class="text-gray-500 mb-6">Join us on Sundays and participate in our offering time during the service.</p>
+                    <div class="bg-amber-50 rounded-xl p-5 space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-0.5 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-600">Zambezi, Kiambu County, Near Limuru, Kenya</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-sm text-gray-600">Sunday Service — 9:00 AM</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="calendar" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-sm text-gray-600">Midweek — Wednesday 6:00 PM</span>
+                        </div>
+                    </div>
+                    <p class="mt-5 text-sm text-gray-500">You may also speak with a church elder or treasurer for special donations.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggested Giving Amounts -->
+    <section class="py-20 lg:py-28 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <div class="w-96 h-96 bg-gold rounded-full absolute -top-20 -right-20"></div>
+            <div class="w-64 h-64 bg-gold rounded-full absolute bottom-10 left-10"></div>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14 reveal">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Give with Purpose</p>
+                <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-white mb-4">Suggested Giving</h2>
+                <p class="text-gray-300 text-lg max-w-xl mx-auto">Every amount matters. Here are some ways your giving makes a difference.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center reveal hover:bg-white/20 transition-all">
+                    <p class="text-gold text-3xl font-playfair font-bold mb-2">KSh 500</p>
+                    <p class="text-white font-semibold mb-3">Seed Offering</p>
+                    <p class="text-gray-300 text-sm">Covers Sunday school materials for one child for a month.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center reveal hover:bg-white/20 transition-all">
+                    <p class="text-gold text-3xl font-playfair font-bold mb-2">KSh 1,000</p>
+                    <p class="text-white font-semibold mb-3">Community Care</p>
+                    <p class="text-gray-300 text-sm">Provides a meal package for a needy family during outreach.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center reveal hover:bg-white/20 transition-all">
+                    <p class="text-gold text-3xl font-playfair font-bold mb-2">KSh 5,000</p>
+                    <p class="text-white font-semibold mb-3">Ministry Partner</p>
+                    <p class="text-gray-300 text-sm">Supports one youth program event including transport and resources.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center reveal hover:bg-white/20 transition-all">
+                    <p class="text-gold text-3xl font-playfair font-bold mb-2">KSh 10k+</p>
+                    <p class="text-white font-semibold mb-3">Kingdom Builder</p>
+                    <p class="text-gray-300 text-sm">Directly contributes to church infrastructure and mission expansion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- God's Promise -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="sparkles" class="w-10 h-10 text-gold"></i>
+            </div>
+            <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue mb-6">God's Promise to Givers</h2>
+            <blockquote class="text-xl text-gray-600 leading-relaxed italic mb-6">
+                "Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this, says the Lord Almighty, and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it."
+            </blockquote>
+            <p class="text-gold font-semibold text-lg mb-10">— Malachi 3:10 (NIV)</p>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                We believe in the biblical principle of tithing and generous giving. As you sow into God's Kingdom, we trust that He will honour your faith and faithfulness.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 lg:py-28 bg-light-gray">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Questions &amp; Answers</p>
+                <h2 class="text-4xl font-playfair font-bold text-royal-blue">Giving FAQs</h2>
+            </div>
+            <div class="space-y-5 reveal">
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">Is my donation tax deductible?</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">As a registered faith organization in Kenya, we are able to issue giving records upon request. Please contact us for details specific to your situation.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">Can I give towards a specific project?</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Yes! You can designate gifts towards specific projects such as our building fund, youth ministry, or missions. Simply mention the project when giving or email us at info@aiczionzambezi.org.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">How are donations used?</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">All offerings are managed by our church treasurer and elder board, with full accountability. Funds go towards pastoral ministry, outreach, church operations, and community programs.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-playfair font-bold text-royal-blue text-lg mb-2">Can I give as a recurring monthly donor?</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Absolutely. You can set up a standing order through your bank, or use M-Pesa on the same date each month. Consistent givers powerfully sustain our ministry year-round.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gold">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-4xl font-playfair font-bold text-royal-blue mb-4">Have Questions About Giving?</h2>
+            <p class="text-royal-blue/70 text-lg mb-8">We'd love to talk with you. Reach out to our church office or speak to a pastor after service.</p>
+            <a href="/Contact/" class="inline-flex items-center gap-2 bg-royal-blue text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-royal-blue-light transition-all shadow-lg">
+                <i data-lucide="mail" class="w-5 h-5"></i> Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-royal-blue text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-14 w-auto">
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        A Christ-centered church committed to spreading the love of God and building strong families in Kiambu County, Kenya.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/Home/" class="text-gray-300 hover:text-gold transition-colors text-sm">Home</a></li>
+                        <li><a href="/About/" class="text-gray-300 hover:text-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="/Sermons/" class="text-gray-300 hover:text-gold transition-colors text-sm">Sermons</a></li>
+                        <li><a href="/Ministries/" class="text-gray-300 hover:text-gold transition-colors text-sm">Ministries</a></li>
+                        <li><a href="/Gallery/" class="text-gray-300 hover:text-gold transition-colors text-sm">Gallery</a></li>
+                        <li><a href="/Blog/" class="text-gray-300 hover:text-gold transition-colors text-sm">Blog</a></li>
+                        <li><a href="/Giving/" class="text-gold font-semibold transition-colors text-sm">Give</a></li>
+                        <li><a href="/Contact/" class="text-gray-300 hover:text-gold transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Service Times</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between text-gray-300">
+                            <span>Sunday Worship</span>
+                            <span class="text-gold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Midweek Fellowship</span>
+                            <span class="text-gold">Wed 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Youth Fellowship</span>
+                            <span class="text-gold">Sat 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">Zambezi, Kiambu County<br>Near Limuru, Kenya</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">+254 712 345 678</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">info@aiczionzambezi.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    © <span id="footer-year"></span> AIC Zion – Zambezi. All rights reserved.
+                    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+                </p>
+                <p class="text-gray-500 text-xs mt-2 md:mt-0">African Inland Church | Kiambu County, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
