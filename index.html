@@ -2,19 +2,328 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/Home/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIC Zion – Zambezi | Redirecting...</title>
-    <script>
-        // Fallback redirect for environments that ignore meta refresh
-        window.addEventListener('DOMContentLoaded', function () {
-            if (window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) {
-                window.location.replace('/Home/');
-            }
-        });
-    </script>
+    <title>AIC Zion – Zambezi</title>
+    <link rel="icon" type="image/png" href="/Images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0B3C5D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ── Particle canvas ── */
+        #particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Radial glow backdrop ── */
+        .glow-bg {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 50%,
+                rgba(212,175,55,0.12) 0%,
+                rgba(11,60,93,0) 70%);
+            z-index: 1;
+            animation: glowPulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            from { opacity: 0.6; transform: scale(1); }
+            to   { opacity: 1;   transform: scale(1.15); }
+        }
+
+        /* ── Loader card ── */
+        .loader-wrap {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        /* ── Orbit ring ── */
+        .orbit-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(212,175,55,0.18);
+            transform: translate(-50%, -50%);
+            animation: spinRing 8s linear infinite;
+        }
+
+        .orbit-ring::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: #D4AF37;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 12px 4px rgba(212,175,55,0.7);
+        }
+
+        .orbit-ring-2 {
+            width: 230px;
+            height: 230px;
+            border-color: rgba(212,175,55,0.09);
+            animation: spinRing 14s linear infinite reverse;
+        }
+
+        .orbit-ring-2::after {
+            top: auto;
+            bottom: -5px;
+            left: 30%;
+            width: 7px;
+            height: 7px;
+            box-shadow: 0 0 8px 3px rgba(212,175,55,0.5);
+        }
+
+        @keyframes spinRing {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to   { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* ── Logo container ── */
+        .logo-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Glowing halo behind logo */
+        .logo-halo {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212,175,55,0.25) 0%, transparent 70%);
+            animation: haloPulse 2.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes haloPulse {
+            from { transform: scale(0.9); opacity: 0.5; }
+            to   { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Logo image */
+        .logo-img {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 18px rgba(212,175,55,0.55));
+            animation: logoFloat 4s ease-in-out infinite, logoEntry 0.9s cubic-bezier(0.34,1.56,0.64,1) both;
+        }
+
+        @keyframes logoEntry {
+            from { opacity: 0; transform: scale(0.4) rotate(-15deg); }
+            to   { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px)   rotate(0deg); }
+            25%       { transform: translateY(-10px) rotate(1.5deg); }
+            75%       { transform: translateY(6px)   rotate(-1.5deg); }
+        }
+
+        /* ── Text block ── */
+        .text-block {
+            margin-top: 36px;
+            text-align: center;
+            animation: fadeUp 0.8s 0.5s ease-out both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .church-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 4vw, 1.9rem);
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 300;
+            color: #D4AF37;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+
+        /* ── Progress bar ── */
+        .progress-track {
+            margin-top: 28px;
+            width: 180px;
+            height: 3px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 99px;
+            overflow: hidden;
+            animation: fadeUp 0.8s 0.7s ease-out both;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #D4AF37, #F4D03F, #D4AF37);
+            border-radius: 99px;
+            animation: progressRun 2.4s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
+        }
+
+        @keyframes progressRun {
+            0%   { width: 0%; }
+            60%  { width: 85%; }
+            100% { width: 100%; }
+        }
+
+        /* ── Entering text ── */
+        .entering-text {
+            margin-top: 14px;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            animation: fadeUp 0.8s 0.9s ease-out both, blink 1.4s 0.9s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.35; }
+            50%       { opacity: 0.9; }
+        }
+
+        /* ── Page-exit fade ── */
+        body.fade-out {
+            animation: exitFade 0.55s ease-in forwards;
+        }
+
+        @keyframes exitFade {
+            to { opacity: 0; transform: scale(1.04); }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to the main site... If you are not redirected, <a href="/Home/">click here to go to the Home page</a>.</p>
+
+    <canvas id="particles"></canvas>
+    <div class="glow-bg"></div>
+
+    <div class="loader-wrap">
+        <!-- Orbit rings -->
+        <div style="position:relative; width:150px; height:150px;">
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring orbit-ring-2"></div>
+
+            <!-- Logo -->
+            <div class="logo-container" style="position:absolute;inset:0;">
+                <div class="logo-halo"></div>
+                <img src="/Images/logo.png" alt="AIC Zion Zambezi" class="logo-img">
+            </div>
+        </div>
+
+        <!-- Text -->
+        <div class="text-block">
+            <p class="church-name">AIC Zion – Zambezi</p>
+            <p class="tagline">Where God Dwells in Love</p>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-track">
+            <div class="progress-fill"></div>
+        </div>
+        <p class="entering-text">Entering the sanctuary…</p>
+    </div>
+
+    <script>
+        // ── Particle system ─────────────────────────────────────────
+        (function () {
+            const canvas = document.getElementById('particles');
+            const ctx    = canvas.getContext('2d');
+            let W, H, particles = [];
+
+            function resize() {
+                W = canvas.width  = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+
+            function Particle() {
+                this.reset = function () {
+                    this.x    = Math.random() * W;
+                    this.y    = Math.random() * H;
+                    this.r    = Math.random() * 1.6 + 0.3;
+                    this.vx   = (Math.random() - 0.5) * 0.35;
+                    this.vy   = -(Math.random() * 0.5 + 0.15);
+                    this.life = 0;
+                    this.maxLife = Math.random() * 220 + 100;
+                    this.gold = Math.random() > 0.55;
+                };
+                this.reset();
+                this.life = Math.random() * this.maxLife; // stagger start
+            }
+
+            for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                particles.forEach(p => {
+                    p.life++;
+                    if (p.life > p.maxLife) p.reset();
+                    const progress = p.life / p.maxLife;
+                    const alpha    = progress < 0.2
+                        ? progress / 0.2
+                        : progress > 0.75
+                            ? 1 - (progress - 0.75) / 0.25
+                            : 1;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.gold
+                        ? `rgba(212,175,55,${alpha * 0.75})`
+                        : `rgba(255,255,255,${alpha * 0.35})`;
+                    ctx.fill();
+                    p.x += p.vx;
+                    p.y += p.vy;
+                });
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            draw();
+        })();
+
+        // ── Redirect after animation ────────────────────────────────
+        setTimeout(function () {
+            document.body.classList.add('fade-out');
+            setTimeout(function () {
+                window.location.replace('/Home/');
+            }, 550);
+        }, 2600);
+    </script>
 </body>
 </html>
