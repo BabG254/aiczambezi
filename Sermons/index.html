@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch latest sermons from AIC Zion - Zambezi. Video messages and teachings from our pastors.">
+    <title>Sermons | AIC Zion – Zambezi</title>
+    <link rel="icon" type="image/png" href="/Images/logo.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-blue': '#0B3C5D',
+                        'royal-blue-light': '#1a5276',
+                        'gold': '#D4AF37',
+                        'gold-light': '#F4D03F',
+                        'light-gray': '#F5F7FA',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .video-card {
+            transition: all 0.4s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 60, 93, 0.2);
+        }
+        .play-button {
+            transition: all 0.3s ease;
+        }
+        .video-card:hover .play-button {
+            transform: scale(1.1);
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-royal-blue/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/Home/" class="flex items-center space-x-3">
+                    <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-12 w-auto">
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="/Home/" class="nav-link text-white font-medium text-sm tracking-wide">Home</a>
+                    <a href="/About/" class="nav-link text-white font-medium text-sm tracking-wide">About</a>
+                    <a href="/Sermons/" class="nav-link text-white font-medium text-sm tracking-wide text-gold">Sermons</a>
+                    <a href="/Ministries/" class="nav-link text-white font-medium text-sm tracking-wide">Ministries</a>
+                    <a href="/Contact/" class="nav-link text-white font-medium text-sm tracking-wide">Contact</a>
+                    <a href="/Contact/" class="bg-gold px-6 py-2.5 rounded-full text-royal-blue font-semibold text-sm hover:bg-gold-light transition-all">Join Us</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="lg:hidden hidden bg-royal-blue absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="/Home/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Home</a>
+                <a href="/About/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">About</a>
+                <a href="/Sermons/" class="block px-3 py-3 text-gold font-medium bg-royal-blue-light rounded-lg">Sermons</a>
+                <a href="/Ministries/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Ministries</a>
+                <a href="/Contact/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="http://static.photos/technology/1200x630/50" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-royal-blue/90 to-royal-blue"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Watch & Grow</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6">Sermons</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto">Watch our latest messages and grow in your faith journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Sermon -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <h2 class="text-2xl font-playfair font-bold text-royal-blue mb-8">Featured Message</h2>
+                <div class="bg-royal-blue rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="grid lg:grid-cols-2">
+                        <div class="relative bg-black aspect-video lg:aspect-auto">
+                            <img src="http://static.photos/people/1024x576/500" alt="Featured Sermon" class="w-full h-full object-cover opacity-80">
+                            <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="absolute inset-0 flex items-center justify-center group">
+                                <div class="play-button w-20 h-20 bg-gold rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                                    <i data-lucide="play" class="w-8 h-8 text-royal-blue ml-1"></i>
+                                </div>
+                            </a>
+                            <div class="absolute bottom-4 left-4 bg-black/70 px-3 py-1 rounded-lg flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-white"></i>
+                                <span class="text-white text-sm">45:30</span>
+                            </div>
+                        </div>
+                        <div class="p-8 lg:p-12 flex flex-col justify-center">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="bg-gold text-royal-blue px-3 py-1 rounded-full text-xs font-semibold">Latest</span>
+                                <span class="text-gray-300 text-sm">January 19, 2026</span>
+                            </div>
+                            <h3 class="text-3xl font-playfair font-bold text-white mb-4">The Faith that Moves Mountains</h3>
+                            <p class="text-gold font-semibold mb-4">Pastor John Maina</p>
+                            <p class="text-gray-200 leading-relaxed mb-6">
+                                Join us as we explore what it truly means to have mountain-moving faith. This powerful message will challenge you to believe God for the impossible in your life, family, and circumstances.
+                            </p>
+                            <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="inline-flex items-center gap-2 text-gold font-semibold hover:text-white transition-colors">
+                                Watch on YouTube <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sermon Archive -->
+    <section class="py-16 lg:py-24 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 reveal">
+                <div>
+                    <h2 class="text-3xl font-playfair font-bold text-royal-blue mb-2">Recent Sermons</h2>
+                    <p class="text-gray-600">Browse our archive of messages</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex gap-3">
+                    <select class="bg-white border border-gray-200 rounded-lg px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gold">
+                        <option>All Series</option>
+                        <option>Faith Series</option>
+                        <option>Family Life</option>
+                        <option>Prayer</option>
+                    </select>
+                    <select class="bg-white border border-gray-200 rounded-lg px-4 py-2 text-sm text-gray-600 focus:outline-none focus:border-gold">
+                        <option>All Speakers</option>
+                        <option>Pastor John Maina</option>
+                        <option>Pastor Sarah Wanjiku</option>
+                        <option>Rev. Peter Njoroge</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sermon 1 -->
+                <div class="video-card bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="http://static.photos/nature/640x360/501" alt="Sermon" class="w-full h-full object-cover">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="absolute inset-0 flex items-center justify-center group">
+                            <div class="play-button w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="play" class="w-6 h-6 text-royal-blue ml-0.5"></i>
+                            </div>
+                        </a>
+                        <div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3 h-3"></i>
+                            38:45
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gold text-xs font-semibold mb-2">January 12, 2026</p>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 line-clamp-2">Prayer That Changes Everything</h3>
+                        <p class="text-gray-500 text-sm mb-1">Rev. Peter Njoroge</p>
+                        <p class="text-gray-400 text-xs">Prayer Series • Part 3</p>
+                    </div>
+                </div>
+
+                <!-- Sermon 2 -->
+                <div class="video-card bg-white rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay: 100ms;">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="http://static.photos/people/640x360/502" alt="Sermon" class="w-full h-full object-cover">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="absolute inset-0 flex items-center justify-center group">
+                            <div class="play-button w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="play" class="w-6 h-6 text-royal-blue ml-0.5"></i>
+                            </div>
+                        </a>
+                        <div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3 h-3"></i>
+                            42:15
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gold text-xs font-semibold mb-2">January 5, 2026</p>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 line-clamp-2">Building a Legacy of Faith</h3>
+                        <p class="text-gray-500 text-sm mb-1">Pastor Sarah Wanjiku</p>
+                        <p class="text-gray-400 text-xs">Family Series • Part 1</p>
+                    </div>
+                </div>
+
+                <!-- Sermon 3 -->
+                <div class="video-card bg-white rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay: 200ms;">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="http://static.photos/indoor/640x360/503" alt="Sermon" class="w-full h-full object-cover">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="absolute inset-0 flex items-center justify-center group">
+                            <div class="play-button w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="play" class="w-6 h-6 text-royal-blue ml-0.5"></i>
+                            </div>
+                        </a>
+                        <div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3 h-3"></i>
+                            36:20
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gold text-xs font-semibold mb-2">December 29, 2025</p>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 line-clamp-2">Entering the New Year with Hope</h3>
+                        <p class="text-gray-500 text-sm mb-1">Pastor John Maina</p>
+                        <p class="text-gray-400 text-xs">New Year Special</p>
+                    </div>
+                </div>
+
+                <!-- Sermon 4 -->
+                <div class="video-card bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="http://static.photos/nature/640x360/504" alt="Sermon" class="w-full h-full object-cover">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="absolute inset-0 flex items-center justify-center group">
+                            <div class="play-button w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="play" class="w-6 h-6 text-royal-blue ml-0.5"></i>
+                            </div>
+                        </a>
+                        <div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3 h-3"></i>
+                            44:00
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gold text-xs font-semibold mb-2">December 22, 2025</p>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 line-clamp-2">The Gift of Christmas</h3>
+                        <p class="text-gray-500 text-sm mb-1">Pastor Sarah Wanjiku</p>
+                        <p class="text-gray-400 text-xs">Christmas Series</p>
+                    </div>
+                </div>
+
+                <!-- Sermon 5 -->
+                <div class="video-card bg-white rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay: 100ms;">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="http://static.photos/people/640x360/505" alt="Sermon" class="w-full h-full object-cover">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="absolute inset-0 flex items-center justify-center group">
+                            <div class="play-button w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="play" class="w-6 h-6 text-royal-blue ml-0.5"></i>
+                            </div>
+                        </a>
+                        <div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3 h-3"></i>
+                            39:30
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gold text-xs font-semibold mb-2">December 15, 2025</p>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 line-clamp-2">Overcoming Life's Storms</h3>
+                        <p class="text-gray-500 text-sm mb-1">Rev. Peter Njoroge</p>
+                        <p class="text-gray-400 text-xs">Faith Series • Part 5</p>
+                    </div>
+                </div>
+
+                <!-- Sermon 6 -->
+                <div class="video-card bg-white rounded-2xl overflow-hidden shadow-lg reveal" style="transition-delay: 200ms;">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="http://static.photos/outdoor/640x360/506" alt="Sermon" class="w-full h-full object-cover">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="absolute inset-0 flex items-center justify-center group">
+                            <div class="play-button w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                                <i data-lucide="play" class="w-6 h-6 text-royal-blue ml-0.5"></i>
+                            </div>
+                        </a>
+                        <div class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-white text-xs flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3 h-3"></i>
+                            41:10
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gold text-xs font-semibold mb-2">December 8, 2025</p>
+                        <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 line-clamp-2">Living a Life of Purpose</h3>
+                        <p class="text-gray-500 text-sm mb-1">Pastor John Maina</p>
+                        <p class="text-gray-400 text-xs">Purpose Series</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center reveal">
+                <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-red-700 transition-colors">
+                    <i data-lucide="youtube" class="w-5 h-5"></i>
+                    Subscribe to Our Channel
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-royal-blue text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-14 w-auto">
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        A Christ-centered church committed to spreading the love of God.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/Home/" class="text-gray-300 hover:text-gold transition-colors text-sm">Home</a></li>
+                        <li><a href="/About/" class="text-gray-300 hover:text-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="/Sermons/" class="text-gray-300 hover:text-gold transition-colors text-sm">Sermons</a></li>
+                        <li><a href="/Ministries/" class="text-gray-300 hover:text-gold transition-colors text-sm">Ministries</a></li>
+                        <li><a href="/Contact/" class="text-gray-300 hover:text-gold transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Service Times</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between text-gray-300">
+                            <span>Sunday Worship</span>
+                            <span class="text-gold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Midweek Fellowship</span>
+                            <span class="text-gold">Wed 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Youth Fellowship</span>
+                            <span class="text-gold">Sat 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-xs">
+                        Subscribe for weekly sermon updates
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2026 AIC Zion – Zambezi. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

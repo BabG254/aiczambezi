@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact AIC Zion - Zambezi. Visit us in Zambezi, Kiambu County, Kenya. Get directions, prayer requests, and more.">
+    <title>Contact Us | AIC Zion – Zambezi</title>
+    <link rel="icon" type="image/png" href="/Images/logo.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-blue': '#0B3C5D',
+                        'royal-blue-light': '#1a5276',
+                        'gold': '#D4AF37',
+                        'gold-light': '#F4D03F',
+                        'light-gray': '#F5F7FA',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .contact-input {
+            transition: all 0.3s ease;
+        }
+        .contact-input:focus {
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .info-card {
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(11, 60, 93, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-royal-blue/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/Home/" class="flex items-center space-x-3">
+                    <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-12 w-auto">
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="/Home/" class="nav-link text-white font-medium text-sm tracking-wide">Home</a>
+                    <a href="/About/" class="nav-link text-white font-medium text-sm tracking-wide">About</a>
+                    <a href="/Sermons/" class="nav-link text-white font-medium text-sm tracking-wide">Sermons</a>
+                    <a href="/Ministries/" class="nav-link text-white font-medium text-sm tracking-wide">Ministries</a>
+                    <a href="/Contact/" class="nav-link text-white font-medium text-sm tracking-wide text-gold">Contact</a>
+                    <a href="/Contact/" class="bg-gold px-6 py-2.5 rounded-full text-royal-blue font-semibold text-sm hover:bg-gold-light transition-all">Join Us</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="lg:hidden hidden bg-royal-blue absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="/Home/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Home</a>
+                <a href="/About/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">About</a>
+                <a href="/Sermons/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Sermons</a>
+                <a href="/Ministries/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Ministries</a>
+                <a href="/Contact/" class="block px-3 py-3 text-gold font-medium bg-royal-blue-light rounded-lg">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-20 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="http://static.photos/nature/1200x630/800" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-royal-blue/90 to-royal-blue"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Get In Touch</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6">Contact Us</h1>
+                <p class="text-xl text-gray-200 max-w-2xl mx-auto">We'd love to hear from you. Reach out for prayer, questions, or just to say hello.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="py-16 lg:py-24 bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="info-card bg-white rounded-2xl p-8 shadow-xl reveal border border-gray-100">
+                    <div class="w-14 h-14 bg-gold rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="map-pin" class="w-7 h-7 text-royal-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Visit Us</h3>
+                    <p class="text-gray-600">Zambezi, Kiambu County<br>Near Limuru<br>Kenya</p>
+                </div>
+                
+                <div class="info-card bg-white rounded-2xl p-8 shadow-xl reveal border border-gray-100" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-gold rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="phone" class="w-7 h-7 text-royal-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Call Us</h3>
+                    <p class="text-gray-600">+254 712 345 678<br>+254 723 456 789</p>
+                </div>
+                
+                <div class="info-card bg-white rounded-2xl p-8 shadow-xl reveal border border-gray-100" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-gold rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="mail" class="w-7 h-7 text-royal-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Email Us</h3>
+                    <p class="text-gray-600">info@aiczionzambezi.org<br>pastor@aiczionzambezi.org</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="py-16 lg:py-24 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10 reveal">
+                    <h2 class="text-3xl font-playfair font-bold text-royal-blue mb-4">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-6">Have a question, prayer request, or testimony? Fill out the form below and our team will get back to you.</p>
+
+                    <form class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Full Name</label>
+                                <input id="name" type="text" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone Number</label>
+                                <input id="phone" type="tel" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none" placeholder="e.g. +254 712 345 678">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email Address</label>
+                            <input id="email" type="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none" placeholder="you@example.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1" for="subject">Subject</label>
+                            <input id="subject" type="text" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none" placeholder="How can we help?">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1" for="message">Message</label>
+                            <textarea id="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full md:w-auto bg-gold text-royal-blue font-semibold px-8 py-3 rounded-full hover:bg-gold-light transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map / Visit Info -->
+                <div class="reveal">
+                    <h2 class="text-3xl font-playfair font-bold text-royal-blue mb-4">Visit Our Church</h2>
+                    <p class="text-gray-600 mb-6">We are located in Zambezi, Kiambu County near Limuru, Kenya. You are welcome to join us for any of our weekly services.</p>
+
+                    <div class="rounded-2xl overflow-hidden shadow-lg mb-6 h-80">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1234567890123!2d36.7!3d-1.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a0123456789%3A0x1234567890abcdef!2sZambezi%2C%20Kiambu%20County%2C%20Kenya!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="grayscale hover:grayscale-0 transition-all duration-500">
+                        </iframe>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-md p-6 space-y-3 text-sm text-gray-700">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-gold mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-royal-blue mb-1">Service Times</p>
+                                <p>Sunday Worship – 9:00 AM</p>
+                                <p>Midweek Fellowship – Wednesday 6:00 PM</p>
+                                <p>Youth Fellowship – Saturday 3:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-royal-blue mb-1">Address</p>
+                                <p>Zambezi, Kiambu County<br>Near Limuru, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-royal-blue text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-14 w-auto">
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        A Christ-centered church committed to spreading the love of God and building strong families in Kiambu County, Kenya.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/Home/" class="text-gray-300 hover:text-gold transition-colors text-sm">Home</a></li>
+                        <li><a href="/About/" class="text-gray-300 hover:text-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="/Sermons/" class="text-gray-300 hover:text-gold transition-colors text-sm">Sermons</a></li>
+                        <li><a href="/Ministries/" class="text-gray-300 hover:text-gold transition-colors text-sm">Ministries</a></li>
+                        <li><a href="/Contact/" class="text-gray-300 hover:text-gold transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Service Times</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between text-gray-300">
+                            <span>Sunday Worship</span>
+                            <span class="text-gold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Midweek Fellowship</span>
+                            <span class="text-gold">Wed 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Youth Fellowship</span>
+                            <span class="text-gold">Sat 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">Zambezi, Kiambu County<br>Near Limuru, Kenya</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">+254 712 345 678</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">info@aiczionzambezi.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    © 2026 AIC Zion – Zambezi. All rights reserved.
+                </p>
+                <p class="text-gray-500 text-xs mt-2 md:mt-0">
+                    African Inland Church | Kiambu County, Kenya
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

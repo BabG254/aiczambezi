@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIC Zion - Zambezi is a Christ-centered church in Kiambu County, Kenya. Join us for worship, fellowship, and spiritual growth.">
+    <title>AIC Zion – Zambezi | Welcome Home</title>
+    <link rel="icon" type="image/png" href="/Images/logo.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-blue': '#0B3C5D',
+                        'royal-blue-light': '#1a5276',
+                        'gold': '#D4AF37',
+                        'gold-light': '#F4D03F',
+                        'light-gray': '#F5F7FA',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-in-right': 'slideInRight 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px rgba(212, 175, 55, 0.5)' },
+                            '100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.8), 0 0 40px rgba(212, 175, 55, 0.4)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(11, 60, 93, 0.95) 0%, rgba(11, 60, 93, 0.7) 50%, rgba(11, 60, 93, 0.4) 100%);
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(11, 60, 93, 0.15);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .counter-value {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0B3C5D;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="/Home/" class="flex items-center space-x-3">
+                    <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-12 w-auto">
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="/Home/" class="nav-link text-white font-medium text-sm tracking-wide">Home</a>
+                    <a href="/About/" class="nav-link text-white font-medium text-sm tracking-wide">About</a>
+                    <a href="/Sermons/" class="nav-link text-white font-medium text-sm tracking-wide">Sermons</a>
+                    <a href="/Ministries/" class="nav-link text-white font-medium text-sm tracking-wide">Ministries</a>
+                    <a href="/Contact/" class="nav-link text-white font-medium text-sm tracking-wide">Contact</a>
+                    <a href="/Contact/" class="btn-gold px-6 py-2.5 rounded-full text-royal-blue font-semibold text-sm hover:text-royal-blue-light">Join Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-royal-blue absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="/Home/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Home</a>
+                <a href="/About/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">About</a>
+                <a href="/Sermons/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Sermons</a>
+                <a href="/Ministries/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Ministries</a>
+                <a href="/Contact/" class="block px-3 py-3 text-white font-medium hover:bg-royal-blue-light rounded-lg transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="http://static.photos/nature/1200x630/42" alt="Church Interior" class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 border border-gold/20 rounded-full animate-float opacity-30"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 border border-gold/10 rounded-full animate-float opacity-20" style="animation-delay: 2s;"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in-up">
+                <p class="text-gold font-medium tracking-[0.3em] uppercase text-sm mb-4">African Inland Church</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-playfair font-bold text-white mb-6 leading-tight">
+                    Welcome to<br>
+                    <span class="gold-gradient-text">AIC Zion – Zambezi</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-200 font-light mb-10 max-w-2xl mx-auto">
+                    Where God Dwells in Love
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="/Sermons/" class="btn-gold px-8 py-4 rounded-full text-royal-blue font-semibold text-lg flex items-center gap-2 hover:gap-3 transition-all">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        Watch Sermons
+                    </a>
+                    <a href="#services" class="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-lg hover:bg-white hover:text-royal-blue transition-all flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                        Join Us Sunday
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white/60"></i>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">About Our Church</p>
+                    <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue mb-6">
+                        A Place of Worship,<br>Love & Community
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        AIC Zion – Zambezi is a Christ-centered church located in Zambezi, Kiambu County near Limuru, Kenya. Our mission is to spread the love of God, build strong families, and grow disciples of Jesus Christ.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Founded on the principles of the African Inland Church denomination, we welcome people from all walks of life to experience the transforming power of God's love in a warm, family-friendly environment.
+                    </p>
+                    <a href="/About/" class="inline-flex items-center gap-2 text-royal-blue font-semibold hover:text-gold transition-colors group">
+                        Learn More About Us
+                        <i data-lucide="arrow-right" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="relative reveal">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="/Images/church.jpg" alt="Church Community" class="w-full h-[500px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-royal-blue text-white p-6 rounded-2xl shadow-xl">
+                        <p class="font-playfair text-3xl font-bold text-gold">15+</p>
+                        <p class="text-sm">Years of Ministry</p>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-gold text-royal-blue p-6 rounded-2xl shadow-xl">
+                        <p class="font-playfair text-3xl font-bold">500+</p>
+                        <p class="text-sm font-semibold">Members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Times -->
+    <section id="services" class="py-20 lg:py-32 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Service Schedule</p>
+                <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue mb-4">Join Us in Worship</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We gather regularly to celebrate our faith, study God's Word, and fellowship together as a community.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Sunday Worship -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover reveal group">
+                    <div class="w-16 h-16 bg-royal-blue rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="sun" class="w-8 h-8 text-white group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue mb-2">Sunday Worship</h3>
+                    <p class="text-gold font-semibold text-lg mb-4">9:00 AM – 12:00 PM</p>
+                    <p class="text-gray-600">Our main weekly service with powerful worship, prayer, and life-changing preaching.</p>
+                </div>
+                
+                <!-- Midweek Fellowship -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover reveal group" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-royal-blue rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="book-open" class="w-8 h-8 text-white group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue mb-2">Midweek Fellowship</h3>
+                    <p class="text-gold font-semibold text-lg mb-4">Wednesday – 6:00 PM</p>
+                    <p class="text-gray-600">Bible study and prayer meeting to strengthen your walk with Christ midweek.</p>
+                </div>
+                
+                <!-- Youth Fellowship -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover reveal group" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-royal-blue rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-300">
+                        <i data-lucide="users" class="w-8 h-8 text-white group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-royal-blue mb-2">Youth Fellowship</h3>
+                    <p class="text-gold font-semibold text-lg mb-4">Saturday – 3:00 PM</p>
+                    <p class="text-gray-600">Dynamic youth meetings focused on empowering young people in their faith journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats/Counters Section -->
+    <section class="py-16 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="http://static.photos/pattern/1200x630/1" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <p class="text-4xl sm:text-5xl font-playfair font-bold text-gold mb-2 counter-value" data-target="500">0</p>
+                    <p class="text-white/80 text-sm uppercase tracking-wider">Members</p>
+                </div>
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <p class="text-4xl sm:text-5xl font-playfair font-bold text-gold mb-2 counter-value" data-target="5">0</p>
+                    <p class="text-white/80 text-sm uppercase tracking-wider">Ministries</p>
+                </div>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <p class="text-4xl sm:text-5xl font-playfair font-bold text-gold mb-2 counter-value" data-target="200">0</p>
+                    <p class="text-white/80 text-sm uppercase tracking-wider">Sermons</p>
+                </div>
+                <div class="reveal" style="transition-delay: 300ms;">
+                    <p class="text-4xl sm:text-5xl font-playfair font-bold text-gold mb-2 counter-value" data-target="15">0</p>
+                    <p class="text-white/80 text-sm uppercase tracking-wider">Years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verse of the Day -->
+    <section class="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-royal-blue/5 rounded-full translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10 reveal">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Daily Inspiration</p>
+                <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue">Verse of the Day</h2>
+            </div>
+
+            <div class="reveal">
+                <div class="bg-gradient-to-br from-royal-blue to-royal-blue-light rounded-3xl p-8 lg:p-14 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-4 left-6 text-gold/15 font-playfair select-none pointer-events-none" style="font-size:9rem;line-height:1">&ldquo;</div>
+                    <div class="absolute bottom-0 right-6 text-gold/15 font-playfair select-none pointer-events-none" style="font-size:9rem;line-height:1;transform:rotate(180deg)">&ldquo;</div>
+
+                    <div class="relative z-10 text-center py-2">
+                        <p id="verse-text" class="text-white text-xl lg:text-2xl font-light leading-relaxed mb-5 italic" style="transition:opacity 0.4s ease"></p>
+                        <p id="verse-ref" class="text-gold font-playfair font-bold text-lg mb-8" style="transition:opacity 0.4s ease"></p>
+
+                        <div class="flex flex-wrap gap-3 justify-center">
+                            <button id="copy-verse-btn" onclick="copyVerse()"
+                                class="flex items-center gap-2 bg-white/10 hover:bg-white/25 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all border border-white/20">
+                                <i data-lucide="copy" class="w-4 h-4"></i> Copy Verse
+                            </button>
+                            <button onclick="shareWhatsApp()"
+                                class="flex items-center gap-2 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-90" style="background:#25D366">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> Share on WhatsApp
+                            </button>
+                            <button onclick="shareSMS()"
+                                class="flex items-center gap-2 bg-white/10 hover:bg-white/25 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all border border-white/20">
+                                <i data-lucide="message-square" class="w-4 h-4"></i> Share via SMS
+                            </button>
+                            <button onclick="nextVerse()"
+                                class="flex items-center gap-2 btn-gold px-5 py-2.5 rounded-full text-royal-blue text-sm font-semibold transition-all">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i> New Verse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p id="verse-date" class="text-center text-gray-400 text-xs mt-4"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sermons Preview -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Latest Messages</p>
+                    <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue">Recent Sermons</h2>
+                </div>
+                <a href="/Sermons/" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-royal-blue font-semibold hover:text-gold transition-colors group">
+                    View All Sermons
+                    <i data-lucide="arrow-right" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sermon 1 -->
+                <div class="group reveal">
+                    <div class="relative rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="http://static.photos/technology/640x360/77" alt="Sermon Thumbnail" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-royal-blue/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-16 h-16 bg-gold rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-8 h-8 text-royal-blue ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gold text-sm font-semibold mb-2">January 14, 2026</p>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 group-hover:text-gold transition-colors">Walking in Faith</h3>
+                    <p class="text-gray-600 text-sm mb-2">Pastor John Maina</p>
+                    <p class="text-gray-500 text-sm line-clamp-2">An inspiring message about trusting God through difficult seasons and stepping out in faith.</p>
+                </div>
+                
+                <!-- Sermon 2 -->
+                <div class="group reveal" style="transition-delay: 100ms;">
+                    <div class="relative rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="http://static.photos/nature/640x360/88" alt="Sermon Thumbnail" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-royal-blue/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-16 h-16 bg-gold rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-8 h-8 text-royal-blue ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gold text-sm font-semibold mb-2">January 7, 2026</p>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 group-hover:text-gold transition-colors">The Power of Prayer</h3>
+                    <p class="text-gray-600 text-sm mb-2">Rev. Peter Njoroge</p>
+                    <p class="text-gray-500 text-sm line-clamp-2">Discover the transformative power of prayer and how to develop a consistent prayer life.</p>
+                </div>
+                
+                <!-- Sermon 3 -->
+                <div class="group reveal" style="transition-delay: 200ms;">
+                    <div class="relative rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="http://static.photos/people/640x360/99" alt="Sermon Thumbnail" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-royal-blue/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-16 h-16 bg-gold rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-8 h-8 text-royal-blue ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gold text-sm font-semibold mb-2">December 31, 2025</p>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2 group-hover:text-gold transition-colors">New Year, New Beginnings</h3>
+                    <p class="text-gray-600 text-sm mb-2">Pastor Sarah Wanjiku</p>
+                    <p class="text-gray-500 text-sm line-clamp-2">Embracing God's promises for the new year and leaving the past behind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section class="py-20 lg:py-32 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Get Involved</p>
+                <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue mb-4">Our Ministries</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We have various ministries designed to meet the spiritual needs of every age group and demographic.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Youth Ministry -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover reveal group cursor-pointer">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
+                        <i data-lucide="flame" class="w-7 h-7 text-gold group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Youth Ministry</h3>
+                    <p class="text-gray-600 text-sm mb-4">Empowering young people ages 13-35 to live for Christ and impact their generation.</p>
+                    <a href="/Ministries/#youth" class="text-gold text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Women Fellowship -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover reveal group cursor-pointer" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
+                        <i data-lucide="heart" class="w-7 h-7 text-gold group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Women Fellowship</h3>
+                    <p class="text-gray-600 text-sm mb-4">A supportive community for women to grow spiritually, pray together, and build lasting friendships.</p>
+                    <a href="/Ministries/#women" class="text-gold text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Men Fellowship -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover reveal group cursor-pointer" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
+                        <i data-lucide="shield" class="w-7 h-7 text-gold group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Men Fellowship</h3>
+                    <p class="text-gray-600 text-sm mb-4">Building godly men committed to leading their families and serving the church with integrity.</p>
+                    <a href="/Ministries/#men" class="text-gold text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Children Ministry -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover reveal group cursor-pointer">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
+                        <i data-lucide="smile" class="w-7 h-7 text-gold group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Children Ministry</h3>
+                    <p class="text-gray-600 text-sm mb-4">Nurturing the faith of our youngest members through fun, engaging, and age-appropriate teaching.</p>
+                    <a href="/Ministries/#children" class="text-gold text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Worship Team -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover reveal group cursor-pointer" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
+                        <i data-lucide="music" class="w-7 h-7 text-gold group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Worship Team</h3>
+                    <p class="text-gray-600 text-sm mb-4">Leading the congregation in praise and worship through music, song, and creative arts.</p>
+                    <a href="/Ministries/#worship" class="text-gold text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <!-- Evangelism -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg card-hover reveal group cursor-pointer" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold transition-colors">
+                        <i data-lucide="globe" class="w-7 h-7 text-gold group-hover:text-royal-blue transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-royal-blue mb-2">Evangelism Team</h3>
+                    <p class="text-gray-600 text-sm mb-4">Reaching out to the community with the Gospel through outreach programs and mission work.</p>
+                    <a href="/Ministries/#evangelism" class="text-gold text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-4">Our Community</p>
+                <h2 class="text-4xl sm:text-5xl font-playfair font-bold text-royal-blue mb-4">Gallery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Glimpses of our worship services, community events, and family gatherings.</p>
+            </div>
+            
+            <div class="masonry-grid">
+                <div class="masonry-item reveal">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                        <img src="http://static.photos/people/640x480/201" alt="Worship" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-royal-blue/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item reveal" style="transition-delay: 100ms;">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                        <img src="http://static.photos/nature/640x360/202" alt="Church Event" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-royal-blue/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item reveal" style="transition-delay: 200ms;">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                        <img src="http://static.photos/people/640x480/203" alt="Community" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-royal-blue/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item reveal">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                        <img src="http://static.photos/indoor/640x360/204" alt="Prayer" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-royal-blue/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item reveal" style="transition-delay: 100ms;">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                        <img src="http://static.photos/people/640x480/205" alt="Youth" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-royal-blue/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-item reveal" style="transition-delay: 200ms;">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                        <img src="http://static.photos/outdoor/640x360/206" alt="Outdoor Event" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-royal-blue/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 lg:py-32 bg-royal-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="http://static.photos/nature/1200x630/300" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-royal-blue via-royal-blue/95 to-royal-blue/90"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6">
+                Join Us This <span class="text-gold">Sunday</span>
+            </h2>
+            <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                Experience worship, fellowship, and the love of Christ in a welcoming community that feels like home.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/Contact/" class="btn-gold px-8 py-4 rounded-full text-royal-blue font-semibold text-lg">
+                    Get Directions
+                </a>
+                <a href="/Contact/" class="px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-lg hover:bg-white hover:text-royal-blue transition-all">
+                    Contact Church
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="h-96 w-full relative">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1234567890123!2d36.7!3d-1.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a0123456789%3A0x1234567890abcdef!2sZambezi%2C%20Kiambu%20County%2C%20Kenya!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="grayscale hover:grayscale-0 transition-all duration-500">
+        </iframe>
+        <div class="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-xl max-w-xs">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-royal-blue"></i>
+                </div>
+                <div>
+                    <p class="font-playfair font-bold text-royal-blue">AIC Zion - Zambezi</p>
+                    <p class="text-xs text-gray-600">Zambezi, Kiambu County, Kenya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-royal-blue text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Church Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="/Images/logo.png" alt="AIC Zion Zambezi Logo" class="h-14 w-auto">
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        A Christ-centered church committed to spreading the love of God and building strong families in Kiambu County, Kenya.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@aiczionzambezi" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-royal-blue transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/Home/" class="text-gray-300 hover:text-gold transition-colors text-sm">Home</a></li>
+                        <li><a href="/About/" class="text-gray-300 hover:text-gold transition-colors text-sm">About Us</a></li>
+                        <li><a href="/Sermons/" class="text-gray-300 hover:text-gold transition-colors text-sm">Sermons</a></li>
+                        <li><a href="/Ministries/" class="text-gray-300 hover:text-gold transition-colors text-sm">Ministries</a></li>
+                        <li><a href="/Contact/" class="text-gray-300 hover:text-gold transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Service Times -->
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Service Times</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between text-gray-300">
+                            <span>Sunday Worship</span>
+                            <span class="text-gold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Midweek Fellowship</span>
+                            <span class="text-gold">Wed 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between text-gray-300">
+                            <span>Youth Fellowship</span>
+                            <span class="text-gold">Sat 3:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-6 text-gold">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold mt-0.5 flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">Zambezi, Kiambu County<br>Near Limuru, Kenya</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">+254 712 345 678</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold flex-shrink-0"></i>
+                            <span class="text-gray-300 text-sm">info@aiczionzambezi.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    © 2026 AIC Zion – Zambezi. All rights reserved.
+                </p>
+                <p class="text-gray-500 text-xs mt-2 md:mt-0">
+                    African Inland Church | Kiambu County, Kenya
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-royal-blue/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-royal-blue/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.counter-value');
+        let hasCounted = false;
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasCounted) {
+                    hasCounted = true;
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => counterObserver.observe(counter));
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ── Verse of the Day ──────────────────────────────────────────
+        const VERSES = [
+            { text: 'For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.', ref: 'John 3:16 (NIV)' },
+            { text: 'I can do all this through him who gives me strength.', ref: 'Philippians 4:13 (NIV)' },
+            { text: 'The Lord is my shepherd, I lack nothing.', ref: 'Psalm 23:1 (NIV)' },
+            { text: 'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.', ref: 'Proverbs 3:5-6 (NIV)' },
+            { text: 'Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.', ref: 'Joshua 1:9 (NIV)' },
+            { text: 'And we know that in all things God works for the good of those who love him, who have been called according to his purpose.', ref: 'Romans 8:28 (NIV)' },
+            { text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.', ref: 'Jeremiah 29:11 (NIV)' },
+            { text: 'The Lord is my light and my salvation — whom shall I fear? The Lord is the stronghold of my life — of whom shall I be afraid?', ref: 'Psalm 27:1 (NIV)' },
+            { text: 'Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.', ref: 'Philippians 4:6 (NIV)' },
+            { text: 'Come to me, all you who are weary and burdened, and I will give you rest.', ref: 'Matthew 11:28 (NIV)' },
+            { text: 'Love is patient, love is kind. It does not envy, it does not boast, it is not proud.', ref: '1 Corinthians 13:4 (NIV)' },
+            { text: 'Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.', ref: 'Psalm 23:4 (NIV)' },
+            { text: 'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.', ref: 'Isaiah 40:31 (NIV)' },
+            { text: 'Be still, and know that I am God.', ref: 'Psalm 46:10 (NIV)' },
+            { text: 'The name of the Lord is a fortified tower; the righteous run to it and are safe.', ref: 'Proverbs 18:10 (NIV)' },
+            { text: 'Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.', ref: 'Matthew 7:7 (NIV)' },
+            { text: 'Cast all your anxiety on him because he cares for you.', ref: '1 Peter 5:7 (NIV)' },
+            { text: 'This is the day the Lord has made; let us rejoice and be glad in it.', ref: 'Psalm 118:24 (NIV)' },
+            { text: 'I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well.', ref: 'Psalm 139:14 (NIV)' },
+            { text: 'Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.', ref: 'Matthew 5:16 (NIV)' },
+            { text: 'The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you.', ref: 'Numbers 6:24-25 (NIV)' },
+            { text: 'Delight yourself in the Lord, and he will give you the desires of your heart.', ref: 'Psalm 37:4 (NIV)' },
+            { text: 'No weapon forged against you will prevail, and you will refute every tongue that accuses you.', ref: 'Isaiah 54:17 (NIV)' },
+            { text: 'With God all things are possible.', ref: 'Matthew 19:26 (NIV)' },
+            { text: 'I have been crucified with Christ and I no longer live, but Christ lives in me.', ref: 'Galatians 2:20 (NIV)' },
+            { text: 'The peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.', ref: 'Philippians 4:7 (NIV)' },
+            { text: 'Give thanks to the Lord, for he is good; his love endures forever.', ref: 'Psalm 107:1 (NIV)' },
+            { text: 'Do not conform to the pattern of this world, but be transformed by the renewing of your mind.', ref: 'Romans 12:2 (NIV)' },
+            { text: 'If God is for us, who can be against us?', ref: 'Romans 8:31 (NIV)' },
+            { text: 'Your word is a lamp for my feet, a light on my path.', ref: 'Psalm 119:105 (NIV)' },
+            { text: 'The Lord your God is with you, the Mighty Warrior who saves. He will take great delight in you; in his love he will no longer rebuke you, but will rejoice over you with singing.', ref: 'Zephaniah 3:17 (NIV)' },
+            { text: 'Seek first his kingdom and his righteousness, and all these things will be given to you as well.', ref: 'Matthew 6:33 (NIV)' },
+            { text: 'Greater love has no one than this: to lay down one\'s life for one\'s friends.', ref: 'John 15:13 (NIV)' },
+            { text: 'The Lord is close to the brokenhearted and saves those who are crushed in spirit.', ref: 'Psalm 34:18 (NIV)' },
+            { text: 'Taste and see that the Lord is good; blessed is the one who takes refuge in him.', ref: 'Psalm 34:8 (NIV)' },
+            { text: 'I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit.', ref: 'John 15:5 (NIV)' },
+            { text: 'Commit to the Lord whatever you do, and he will establish your plans.', ref: 'Proverbs 16:3 (NIV)' },
+            { text: 'For it is by grace you have been saved, through faith — and this is not from yourselves, it is the gift of God.', ref: 'Ephesians 2:8 (NIV)' },
+            { text: 'Create in me a pure heart, O God, and renew a steadfast spirit within me.', ref: 'Psalm 51:10 (NIV)' },
+            { text: 'The Lord himself goes before you and will be with you; he will never leave you nor forsake you.', ref: 'Deuteronomy 31:8 (NIV)' },
+            { text: 'Blessed are the pure in heart, for they will see God.', ref: 'Matthew 5:8 (NIV)' },
+            { text: 'We live by faith, not by sight.', ref: '2 Corinthians 5:7 (NIV)' },
+            { text: 'So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.', ref: 'Isaiah 41:10 (NIV)' },
+            { text: 'Now faith is confidence in what we hope for and assurance about what we do not see.', ref: 'Hebrews 11:1 (NIV)' },
+            { text: 'Be joyful in hope, patient in affliction, faithful in prayer.', ref: 'Romans 12:12 (NIV)' },
+            { text: 'Rejoice in the Lord always. I will say it again: Rejoice!', ref: 'Philippians 4:4 (NIV)' },
+            { text: 'My grace is sufficient for you, for my power is made perfect in weakness.', ref: '2 Corinthians 12:9 (NIV)' },
+            { text: 'God is our refuge and strength, an ever-present help in trouble.', ref: 'Psalm 46:1 (NIV)' },
+            { text: 'The Lord is my strength and my shield; my heart trusts in him, and he helps me.', ref: 'Psalm 28:7 (NIV)' },
+            { text: 'And my God will meet all your needs according to the riches of his glory in Christ Jesus.', ref: 'Philippians 4:19 (NIV)' },
+            { text: 'For nothing will be impossible with God.', ref: 'Luke 1:37 (NIV)' },
+            { text: 'I am the resurrection and the life. The one who believes in me will live, even though they die.', ref: 'John 11:25 (NIV)' },
+            { text: 'Above all, love each other deeply, because love covers over a multitude of sins.', ref: '1 Peter 4:8 (NIV)' },
+            { text: 'Humble yourselves, therefore, under God\'s mighty hand, that he may lift you up in due time.', ref: '1 Peter 5:6 (NIV)' },
+            { text: 'The effectual fervent prayer of a righteous man availeth much.', ref: 'James 5:16 (KJV)' },
+            { text: 'I am the way and the truth and the life. No one comes to the Father except through me.', ref: 'John 14:6 (NIV)' },
+            { text: 'Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.', ref: 'Colossians 3:23 (NIV)' },
+            { text: 'He gives strength to the weary and increases the power of the weak.', ref: 'Isaiah 40:29 (NIV)' },
+            { text: 'The Lord is good to all; he has compassion on all he has made.', ref: 'Psalm 145:9 (NIV)' },
+            { text: 'For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.', ref: '2 Timothy 1:7 (NIV)' },
+            { text: 'In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God\'s grace.', ref: 'Ephesians 1:7 (NIV)' },
+            { text: 'The Lord is gracious and compassionate, slow to anger and rich in love.', ref: 'Psalm 145:8 (NIV)' }
+        ];
+
+        function shuffleArray(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function getFreshQueue() {
+            return shuffleArray(Array.from({ length: VERSES.length }, (_, i) => i));
+        }
+
+        function loadVotd() {
+            const today = new Date().toDateString();
+            let queue   = JSON.parse(localStorage.getItem('votd_queue') || 'null');
+            let pos     = parseInt(localStorage.getItem('votd_pos') || '0', 10);
+            const lastDate = localStorage.getItem('votd_date');
+            let current = parseInt(localStorage.getItem('votd_current') || '-1', 10);
+
+            if (lastDate !== today || current < 0) {
+                if (!queue || pos >= queue.length) { queue = getFreshQueue(); pos = 0; }
+                current = queue[pos++];
+                localStorage.setItem('votd_queue', JSON.stringify(queue));
+                localStorage.setItem('votd_pos', String(pos));
+                localStorage.setItem('votd_date', today);
+                localStorage.setItem('votd_current', String(current));
+            }
+
+            renderVerse(current, true);
+        }
+
+        function renderVerse(index, isDaily) {
+            const v = VERSES[Math.min(index, VERSES.length - 1)];
+            const textEl = document.getElementById('verse-text');
+            const refEl  = document.getElementById('verse-ref');
+            const dateEl = document.getElementById('verse-date');
+
+            textEl.style.opacity = '0'; refEl.style.opacity = '0';
+            setTimeout(() => {
+                textEl.textContent = v.text;
+                refEl.textContent  = '\u2014 ' + v.ref;
+                textEl.style.opacity = '1'; refEl.style.opacity = '1';
+            }, 350);
+
+            const dayStr = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            dateEl.textContent = (isDaily ? "Today\u2019s verse \u2022 " : 'More inspiration \u2022 ') + dayStr;
+        }
+
+        function nextVerse() {
+            let queue = JSON.parse(localStorage.getItem('votd_queue') || 'null');
+            let pos   = parseInt(localStorage.getItem('votd_pos') || '0', 10);
+            if (!queue || pos >= queue.length) { queue = getFreshQueue(); pos = 0; }
+            const index = queue[pos++];
+            localStorage.setItem('votd_queue', JSON.stringify(queue));
+            localStorage.setItem('votd_pos', String(pos));
+            renderVerse(index, false);
+        }
+
+        function getVerseString() {
+            const text = document.getElementById('verse-text').textContent;
+            const ref  = document.getElementById('verse-ref').textContent.replace(/^\u2014\s*/, '');
+            return '\u201c' + text + '\u201d \u2014 ' + ref;
+        }
+
+        function copyVerse() {
+            const full = getVerseString() + '\n\nShared from AIC Zion \u2013 Zambezi';
+            const btn  = document.getElementById('copy-verse-btn');
+            const orig = btn.innerHTML;
+
+            const done = () => {
+                btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> Copied!';
+                lucide.createIcons();
+                setTimeout(() => { btn.innerHTML = orig; lucide.createIcons(); }, 2000);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(full).then(done).catch(() => fallbackCopy(full, done));
+            } else {
+                fallbackCopy(full, done);
+            }
+        }
+
+        function fallbackCopy(text, cb) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.focus(); ta.select();
+            try { document.execCommand('copy'); cb(); } catch(e) {}
+            document.body.removeChild(ta);
+        }
+
+        function shareWhatsApp() {
+            const msg = getVerseString() + '\n\n\uD83D\uDE4F Shared from AIC Zion \u2013 Zambezi';
+            window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function shareSMS() {
+            const msg = getVerseString() + ' | AIC Zion \u2013 Zambezi';
+            window.open('sms:?body=' + encodeURIComponent(msg));
+        }
+
+        loadVotd();
+        // ─────────────────────────────────────────────────────────────
+    </script>
+</body>
+</html>
